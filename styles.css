@@ -1,0 +1,175 @@
+/* o sinal * serve para generalizar toda uma estrutura, aqui é para todos
+mas se eu colocor main *, todo o conteúdo do main sofrerá as mudanças */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background-image: url(./assets/Fundo.jpg);
+    background-position: top center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-color: #121214;
+    
+}
+
+body * {
+    font-family: 'inter', sans-serif;
+}
+
+header {
+
+        text-align: center;
+        margin-top: 32px; 
+        height: calc(120px + 32px); 
+}
+
+/* nesta div ao colocar o width a imagem ficaria com erro, se tentasse colocar o img line
+não iria regular iri dar erro, o segredo é deixar a margen automática.*/
+header div {
+    width: 120px;
+    margin: auto;
+    background-image: linear-gradient(90deg,#f30404 0%, #43E7AD 50.52%, #100dc0 100%);
+    border-radius: 50%;
+    display: flex;
+    padding: 4px;
+    transform: transform .3s;
+}
+/* está div é para por efeito de mouse, sempre que o mouse passar por cima ela vai pulsar*/
+header div:hover {
+    transform: scale(1.1)
+}
+
+header img {
+    width: 100%;     
+    border-radius: 50%;
+}
+ 
+/* aqui no margin possui 2 valores para que as margens tenha valores igual no main */
+main {
+    max-width: 580px;
+    width: 90%;
+    margin: 32px auto;
+    display: grid;
+    gap: 24px;
+}
+
+section {
+    color: white;
+    line-height: 160%;
+    background-image: linear-gradient(90deg,#f30404 0%, #43E7AD 50.52%, #100dc0 100%);
+    padding-top: 4px;
+    border-radius: 10px;
+}
+
+section div {
+    background-color: #2A2634;
+    padding: 32px;
+    padding-top: 24px;
+    border-radius: 8px;
+}
+
+section h2 {
+    font-weight: 900;
+    font-size: 24px;
+    letter-spacing: -0.47px;
+}
+
+section p {
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -0.18px;
+    color: #a1a1aa
+}
+
+ul {
+    display: flex;
+   flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 24px;
+    /*Flex-wrap serve para ajustar a tela conforme tenha mais preenchimento */
+}
+
+section ul li {
+    transition: transform .3s ;
+}
+
+section ul li:hover {
+    transform: scale(1.1);
+}
+
+.games-list img {
+    width: 90px;
+    border-radius: 8px;
+}
+
+.channel-list img {
+    border-radius: 50%;
+    width: 70px;
+    border: 1px solid #443E54;
+}
+
+/* target="_blank" essa opção serve para cada vez que clicar no link, 
+faz com que abra mais uma aba sem perder onde estava */
+
+
+/*  animation  */
+
+header div {
+    animation: fromTop .7s .4s backwards;
+}
+
+main section {
+    animation: fromBottom .7s backwards;
+}
+
+main section:nth-child(1) {
+    animation-delay: 0;
+}
+
+main section:nth-child(2) {
+    animation-delay: .4s;
+}
+
+main section:nth-child(3) {
+    animation-delay: .7s;
+}
+
+
+@keyframes fromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px)
+    }
+
+    to { 
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+
+@keyframes fromBottom {
+    from {
+        opacity: 0;
+        transform: translateX(-30px)
+    }
+
+    to { 
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+/* para definir animações no CSS basta colocar o @kayframes e nomear os mesmos   */
+
+/* A única maneira de fazer algo excelente é amar o que você faz. 
+Se você ainda não a encontrou, continue procurando. Não se acomode.*/
+
+/* Lembre-se Paulo, Foguete não dá ré, um vez que iniciou vá até o fim */
